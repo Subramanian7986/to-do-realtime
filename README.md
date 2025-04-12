@@ -1,4 +1,3 @@
-Here's a catchy and attention-grabbing README for your project:
 
 ---
 
@@ -97,5 +96,3 @@ Feel free to fork the repository and create a pull request with improvements, fe
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-
-This README is designed to give your project a professional and attractive look! Let me know if you'd like to tweak anything!
