@@ -1,0 +1,173 @@
+/* Global Styles */
+:root {
+  --primary-color: #0d6efd;  /* Primary Blue */
+  --secondary-color: #6c757d;  /* Secondary Gray */
+  --bg-color: #f8f9fa;  /* Light Gray Background */
+  --text-color: #212529;  /* Dark Text */
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 16px;
+  transition: background-color var(--transition-speed);
+}
+
+/* Main Container */
+.App {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  transition: color var(--transition-speed);
+}
+
+h1:hover {
+  color: #0056b3;  /* Darker shade of primary color */
+}
+
+/* Task Form */
+form {
+  display: flex;
+  flex-direction: column;  /* Stack inputs vertically */
+  gap: 1rem;
+  align-items: stretch;
+  position: relative;
+}
+
+input, select, button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #ced4da;
+  background-color: white;
+  transition: all var(--transition-speed);
+}
+
+input:focus, select:focus, button:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+input[type="date"], input[type="time"] {
+  width: 100%;
+}
+
+select {
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* Filter Positioning */
+select.filter {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: auto;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #ced4da;
+  transition: border-color var(--transition-speed);
+}
+
+/* Task List */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow var(--transition-speed);
+}
+
+li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Task Actions (buttons inside TaskItem) */
+.task-actions button {
+  background-color: transparent;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: color var(--transition-speed);
+}
+
+.task-actions button:hover {
+  color: #0056b3;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .App {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  form {
+    gap: 1rem;
+  }
+
+  button {
+    grid-column: span 1;
+  }
+
+  select.filter {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  form {
+    gap: 1rem;
+  }
+
+  .task-actions button {
+    font-size: 1rem;
+  }
+
+  select.filter {
+    font-size: 0.75rem;
+  }
+}
